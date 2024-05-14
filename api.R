@@ -1,16 +1,17 @@
 
 
 #* @get /version
-function() {
+version <- function() {
   ejemplo <- fromJSON(
     '{"version" : "0.0.1"}'
   )
+  print(ejemplo)
 }
 
 
 #* @param codigo Código del indicador del banco mundial
 #* @get /indicador
-function(codigo = "FP.CPI.TOTL.ZG") {
+recolecta_datos <- function(codigo = "FP.CPI.TOTL.ZG") {
 
   url <- paste0("https://api.worldbank.org/v2/es/indicator/", 
                 codigo, "?downloadformat=csv")
